@@ -9,7 +9,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [query, setQuery] = useState("");
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const { characters, isLoading } = useCharacters(
     "https://rickandmortyapi.com/api/character/?name",
     query
@@ -17,14 +17,13 @@ function App() {
   const [selectedId, setSelectedId] = useState(null);
   const [favourites, setFavourites] = useLocalStorage("FAVOURITES", []);
 
-  useEffect(() => {
-    const interval = setInterval(() => setCount((c) => c + 1), 1000);
-    // return function(){}
-    return () => {
-      clearInterval(interval);
-    };
-  }, [count]);
- 
+  // useEffect(() => {
+  //   const interval = setInterval(() => setCount((c) => c + 1), 1000);
+  //   // return function(){}
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [count]);
 
   const handleSelectCharacter = (id) => {
     setSelectedId((prevId) => (prevId === id ? null : id));

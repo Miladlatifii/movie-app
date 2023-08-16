@@ -13,7 +13,9 @@ export default function Navbar({ children }) {
 }
 
 function Logo() {
-  return <div className="navbar__logo">LOGO 😍</div>;
+  return <div className="navbar__logo">
+    <h1>Movie-app</h1>
+  </div>;
 }
 
 export function Search({ query, setQuery }) {

@@ -48,7 +48,7 @@ function CharaterName({ item }) {
   return (
     <h3 className="name">
       <span>{item.gender === "Male" ? "👱🏻‍♂️" : "👩🏻‍🦳"}</span>
-      <span> {item.name}</span>
+      <span style={{fontSize:"14px"}}> {item.name}</span>
     </h3>
   );
 }

@@ -7,6 +7,8 @@
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: var(--slate-700);
@@ -48,14 +50,14 @@
 }
 
 .main {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   width: 100%;
   gap: 2rem;
 }
 
 .characters-list {
-  width: 40%;
+  /* width: 40%; */
 }
 
 .box h2 {
@@ -148,8 +150,9 @@
   padding: 1rem;
 }
 .character-detail__info .name {
-  font-size: 1.3rem;
-  margin-bottom: 0.2rem;
+  font-size: 14px;
+  background-color: #fff;
+  /* margin-bottom: 0.2rem; */
 }
 .character-detail__info .info {
   font-size: 0.9rem;
@@ -214,7 +217,7 @@
   /* cursor: pointer; */
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .character-detail {
     flex-direction: row;
   }
@@ -224,4 +227,9 @@
   .character-detail__info .actions {
     flex-direction: row;
   }
+}
+.character__detail {
+  /* flex: 1;
+  color: var(--slate-300); */
+  display: none;
 }
