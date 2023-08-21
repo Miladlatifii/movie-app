@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import { toast } from "react-hot-toast";
+import { animateScroll, animateScroll as scroll, scroller } from "react-scroll";
+import Modal from "./Modal";
 
 function CharacterDetail({ selectedId, onAddFavourite, isAddToFavourite }) {
   const [character, setCharacter] = useState(null);
@@ -17,6 +19,13 @@ function CharacterDetail({ selectedId, onAddFavourite, isAddToFavourite }) {
           `https://rickandmortyapi.com/api/character/${selectedId}`
         );
         setCharacter(data);
+
+        animateScroll.scrollToBottom("character-detail", {
+          duration: 1000,
+          delay: 100,
+          smooth: true,
+          containerId: "character",
+        });
 
         const episodesId = data.episode.map((e) => e.split("/").at(-1)); // [1, 2, 3]
         const { data: episodeData } = await axios.get(
@@ -41,11 +50,7 @@ function CharacterDetail({ selectedId, onAddFavourite, isAddToFavourite }) {
     );
 
   if (!character || !selectedId)
-    return (
-      <div className="character__detail">
-        Please select a character.
-      </div>
-    );
+    return <div className="character__detail">Please select a character.</div>;
 
   return (
     <div style={{ flex: 1 }}>
@@ -63,7 +68,7 @@ export default CharacterDetail;
 
 function CharacterSubInfo({ character, isAddToFavourite, onAddFavourite }) {
   return (
-    <div className="character-detail">
+    <div id="character" className="character-detail">
       <img
         src={character.image}
         alt={character.name}

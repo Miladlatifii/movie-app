@@ -6,6 +6,7 @@ import Navbar, { Favourites, Search, SearchResult } from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 import useCharacters from "./hooks/useCharacter";
 import useLocalStorage from "./hooks/useLocalStorage";
+import Modal from "./components/Modal";
 
 function App() {
   const [query, setQuery] = useState("");

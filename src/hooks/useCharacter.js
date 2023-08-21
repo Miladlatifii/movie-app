@@ -14,6 +14,7 @@ export default function useCharacters(url, query) {
         setIsLoading(true);
         const { data } = await axios.get(`${url}=${query}`, { signal });
         setCharacters(data.results.slice(0, 5));
+        
       } catch (err) {
         // fetch => err.name ==="AbortError"
         // axios => axios.isCancel()
