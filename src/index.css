@@ -80,7 +80,7 @@ button {
   width: 98%;
   min-height: 250px;
   position: absolute;
-  top: 20%;
+  top: 20rem;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--slate-900);
@@ -114,6 +114,7 @@ button {
 @media screen and (min-width: 768px) {
   .modal {
     max-width: 30rem;
+    
   }
 }
 
